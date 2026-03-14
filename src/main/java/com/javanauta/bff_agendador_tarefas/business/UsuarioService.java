@@ -4,6 +4,7 @@ import com.javanauta.bff_agendador_tarefas.business.dto.in.EnderecoDTORequest;
 import com.javanauta.bff_agendador_tarefas.business.dto.in.LoginDTORequest;
 import com.javanauta.bff_agendador_tarefas.business.dto.in.TelefoneDTORequest;
 import com.javanauta.bff_agendador_tarefas.business.dto.in.UsuarioDTORequest;
+import com.javanauta.bff_agendador_tarefas.business.dto.out.ViaCepDTOResponse;
 import com.javanauta.bff_agendador_tarefas.infrastructure.client.UsuarioClient;
 
 import lombok.RequiredArgsConstructor;
@@ -55,5 +56,7 @@ public class UsuarioService {
     public TelefoneDTORequest cadastraTelefone(String token, TelefoneDTORequest dto) {
         return client.cadastraTelefone(dto, token);
     }
-
+    public ViaCepDTOResponse buscarEnderecoPorCep(String cep){
+        return client.buscarDadosCep(cep);
+    }
 }
